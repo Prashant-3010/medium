@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { sign } from 'hono/jwt'
+import { z } from 'zod';
 
 export const userRouter = new Hono<{
 	Bindings: {
@@ -9,6 +10,12 @@ export const userRouter = new Hono<{
         JWT_SECRET: string;
 	}
 }>();
+
+const signupInput = z.object({
+    email : z.string().email(),
+    password : z.string().min(6),
+    name : z.string().optional()
+}
 
 userRouter.post('/signup', async(c) => {
     const prisma = new PrismaClient({

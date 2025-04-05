@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { decode, sign, verify } from 'hono/jwt'
 import { userRouter } from './routes/user';
-import { postRouter } from './routes/post';
+import { blogRouter } from './routes/post';
 
 
 const app = new Hono<{
@@ -14,6 +14,6 @@ const app = new Hono<{
 }>();
 
 app.route("/api/v1/user", userRouter);
-app.route("/api/v1/post", postRouter);
+app.route("/api/v1/blog", blogRouter);
 
 export default app
