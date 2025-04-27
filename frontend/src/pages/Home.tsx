@@ -17,7 +17,7 @@ export const Home = () => {
         </div>
         <div className="flex justify-center flex-col pt-10 border-b border-black bg-right">
         <div className="absolute right-0 bottom-50 w-1/2 h-3/4 bg-no-repeat bg-contain bg-right"
-                style={{ backgroundImage: "url('src/img/image.jpg.webp')" }}
+                style={{ backgroundImage: "url('https://miro.medium.com/v2/format:webp/4*SdjkdS98aKH76I8eD0_qjw.png')" }}
             />
             <div className="flex justify-start pl-28">
                 <div className="max-w-lg">
